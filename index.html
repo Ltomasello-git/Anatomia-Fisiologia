@@ -10,6 +10,7 @@
             --au-color: #e74c3c;
             --fi-color: #27ae60;
             --zz-color: #f39c12;
+            --le-color: #3baac8;
             --bg-light: #f4f7f6;
         }
 
@@ -58,11 +59,19 @@
         .btn-au { background: #fee; color: var(--au-color); }
         .btn-fi { background: #efe; color: var(--fi-color); }
         .btn-zz { background: #fff4e5; color: var(--zz-color); }
+        .btn-le { background: #d8f0f2; color: var(--le-color); }
 
         .tab-btn.active { color: white; }
         .btn-au.active { background: var(--au-color); }
         .btn-fi.active { background: var(--fi-color); }
         .btn-zz.active { background: var(--zz-color); }
+        .btn-le.active { background: var(--le-color); }
+		
+		.test-completo {
+			color: #e74c3c !important; /* Rosso */
+			font-weight: bold !important;
+			font-style: italic !important;
+		}
 
         .content-container {
             display: flex;
@@ -174,7 +183,8 @@
 </header>
 
 <div class="main-nav">
-    <button class="tab-btn btn-au active" onclick="showArea('au')">Anatomia</button>
+    <button class="tab-btn btn-le active" onclick="showArea('le')">Lezioni</button>
+    <button class="tab-btn btn-au" onclick="showArea('au')">Anatomia</button>
     <button class="tab-btn btn-fi" onclick="showArea('fi')">Fisiologia</button>
     <button class="tab-btn btn-zz" onclick="showArea('zz')">Esami</button>
 </div>
@@ -182,58 +192,104 @@
 <div class="btn-menu-toggle" onclick="toggleMobileMenu()">☰ MOSTRA ELENCO ARGOMENTI</div>
 
 <div class="content-container">
-    <div id="au" class="sidebar active">
+
+    <div id="le" class="sidebar active">
+        <div class="sub-area-title">LEZIONI ANATOMIA</div>
+        <ul class="section-list">
+            <li class="section-item" onclick="loadForm('https://forms.gle/joiG8B21NwE3bQDZA')">Lezioni 01-06 (30 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/udgwiSfP9HAd1pbT6')">Lezioni 07-12 (30 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/8Cv3aX2ZbjBUTHe19')">Lezioni 13-18 (30 domande)</li>
+            <li class="section-item test-completo" onclick="loadForm('https://forms.gle/H5Jk4UbDq2PTiuA39')">Test completo (90 domande)</li>
+        </ul>
+        <div class="sub-area-title">LEZIONI FISIOLOGIA</div>
+        <ul class="section-list">
+            <li class="section-item" onclick="loadForm('https://forms.gle/soUR6NBV3dKAVSr57')">Lezioni 02-07 (30 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/6WBqiTYcyCK2Xt5XA')">Lezioni 08-13 (30 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/jLdgjekhowfKnK1WA')">Lezioni 14-20 (35 domande)</li>
+            <li class="section-item test-completo" onclick="loadForm('https://forms.gle/EM44JsVqgFhUkkhT6')">Test completo (95 domande)</li>
+        </ul>
+		
+    </div>
+
+    <div id="au" class="sidebar">
         <div class="sub-area-title">AU - LOCOMOTORE E CUORE (Scheletro, Muscoli, Cuore)</div>
         <ul class="section-list">
-            <li class="section-item" onclick="loadForm('https://forms.gle/YmFdEhNpaXcBZstT8')">Parte 1</li>
-            <li class="section-item" onclick="loadForm('https://forms.gle/8iwpJAxiFvJwuY749')">Parte 2</li>
-            <li class="section-item" onclick="loadForm('https://forms.gle/2ThVYhh2jtTTqS3s7')">Parte 3</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/YmFdEhNpaXcBZstT8')" title="Domande ordinate, risposte casuali">Parte 1 (30 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/8iwpJAxiFvJwuY749')" title="Domande ordinate, risposte casuali">Parte 2 (30 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/2ThVYhh2jtTTqS3s7')" title="Domande ordinate, risposte casuali">Parte 3 (20 domande)</li>
+            <li class="section-item test-completo" onclick="loadForm('https://forms.gle/nQPnByjrjBEzMB57A')" title="Domande casuali, risposte casuali">Test completo (80 domande)</li>
         </ul>
 
         <div class="sub-area-title">AU - ENDOCRINOLOGIA (Sistema Endocrino)</div>
         <ul class="section-list">
-            <li class="section-item" onclick="loadForm('https://forms.gle/oQwduAsvGnv1bZhG6')">Parte 1</li>
-            <li class="section-item" onclick="loadForm('https://forms.gle/NzGnjEfWoG8t7z1t7')">Parte 2</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/MNXopYH1LQeHXXVS8')" title="Domande ordinate, risposte casuali">Parte 1 (22 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/TEKyWABSi1swpq2k6')" title="Domande ordinate, risposte casuali">Parte 2 (22 domande)</li>
+            <li class="section-item test-completo" onclick="loadForm('https://forms.gle/kQAnQycorYamrLrA9')" title="Domande casuali, risposte casuali">Test completo (44 domande)</li>
         </ul>
 
         <div class="sub-area-title">AU - NEUROBIOLOGIA DI BASE (Cellule, Sinapsi, Neurotrasmettitori)</div>
         <ul class="section-list">
-            <li class="section-item" onclick="loadForm('https://forms.gle/WdjFeP5SNL7VShqA7')">Parte 1</li>
-            <li class="section-item" onclick="loadForm('https://forms.gle/PSVUMuKT66kWVQw29')">Parte 2</li>
-            <li class="section-item" onclick="loadForm('https://forms.gle/JheCimfuYvZ4vdgn9')">Parte 3</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/kfxoXmzEUnc82yG67')" title="Domande ordinate, risposte casuali">Parte 1 (40 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/mEiREWdg7jqwPh2r9')" title="Domande ordinate, risposte casuali">Parte 2 (40 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/CSxoJLKDqELVbfwJA')" title="Domande ordinate, risposte casuali">Parte 3 (34 domande)</li>
+            <li class="section-item test-completo" onclick="loadForm('https://forms.gle/DnaF1JZzM7BqPa8f7')" title="Domande casuali, risposte casuali">Test completo (114 domande)</li>
         </ul>
 
         <div class="sub-area-title">AU - SENSORIALITA' (Organi di senso, Recettori e Sensibilità)</div>
         <ul class="section-list">
-            <li class="section-item" onclick="loadForm('https://forms.gle/gFKdALsPooeGnEFm6')">Parte 1</li>
-            <li class="section-item" onclick="loadForm('https://forms.gle/FEAXc6gh1th1nnbY8')">Parte 2</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/LBBqUrEbycUqbQcK9')" title="Domande ordinate, risposte casuali">Parte 1 (31 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/e4E6xE2qEdH5eDs37')" title="Domande ordinate, risposte casuali">Parte 2 (31 domande)</li>
+            <li class="section-item test-completo" onclick="loadForm('https://forms.gle/xCPcJXobLTqSCnTK9')" title="Domande casuali, risposte casuali">Test completo (62 domande)</li>
         </ul>
 
         <div class="sub-area-title">AU - SISTEMA NERVOSO PERIFERICO (Nervi, Gangli, Riflessi, SNA e SNP)</div>
         <ul class="section-list">
-            <li class="section-item" onclick="loadForm('https://forms.gle/BYkvb7NGSC7j94Q86')">Parte 1</li>
-            <li class="section-item" onclick="loadForm('https://forms.gle/2vF7168eQmMCxAt98')">Parte 2</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/7iY6q5G3yPHvyfvT8')" title="Domande ordinate, risposte casuali">Parte 1 (40 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/JsRpyDSG49GHfown9')" title="Domande ordinate, risposte casuali">Parte 2 (38 domande)</li>
+            <li class="section-item test-completo" onclick="loadForm('https://forms.gle/8ZcvFGJNndss1M6M6')" title="Domande casuali, risposte casuali">Test completo (78 domande)</li>
         </ul>
 
         <div class="sub-area-title">AU -SISTEMA NERVOSO CENTRALE (Ipotalamo, Talamo, Nuclei Base, Tronco, Midollo, Meningi, Liquor)</div>
         <ul class="section-list">
-            <li class="section-item" onclick="loadForm('URL_GOOGLE_FORM_QUI')">Parte 1</li>
-            <li class="section-item" onclick="loadForm('URL_GOOGLE_FORM_QUI')">Parte 2</li>
-            <li class="section-item" onclick="loadForm('URL_GOOGLE_FORM_QUI')">Parte 3</li>
-            <li class="section-item" onclick="loadForm('URL_GOOGLE_FORM_QUI')">Parte 4</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/jmGthkCJGq5y8L7t6')" title="Domande ordinate, risposte casuali">Parte 1 (45 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/m7K22dPy7NeTzNWz9')" title="Domande ordinate, risposte casuali">Parte 2 (45 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/aN3wFqBNvUwK9MG96')" title="Domande ordinate, risposte casuali">Parte 3 (45 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/MunUJ1P8EyqKNxBx5')" title="Domande ordinate, risposte casuali">Parte 4 (42 domande)</li>
+			<li class="section-item test-completo" onclick="loadForm('https://forms.gle/QoRPDegeN1ictgBk8')" title="Domande casuali, risposte casuali">Test completo (177 domande)</li>
         </ul>
 
         
         </div>
 
     <div id="fi" class="sidebar">
-        <div class="sub-area-title">FI - BASI DELLA VITA</div>
+        <div class="sub-area-title">FI - BASI DELLA VITA (Eccitabilità, Generalità)</div>
         <ul class="section-list">
-            <li class="section-item" onclick="loadForm('URL_GOOGLE_FORM_QUI')">Parte 1</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/KbaECJ53a3RW5SM96')" title="Domande ordinate, risposte casuali">Parte 1 (28 domande)</li>
+			<li class="section-item test-completo" onclick="loadForm('https://forms.gle/G2BPC2ze6ng7G17q6')" title="Domande casuali, risposte casuali">Test completo (28 domande)</li>			
         </ul>
-        <div class="sub-area-title">FI - SISTEMI TRASPORTO</div>
+        <div class="sub-area-title">FI - INTEGRAZIONE E RISPOSTA (Nervoso, Sensi, Muscolo-Scheletrico)</div>
         <ul class="section-list">
-            <li class="section-item" onclick="loadForm('URL_GOOGLE_FORM_QUI')">Parte 1</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/qFdPYsyqQe3SwPhj6')" title="Domande ordinate, risposte casuali">Parte 1 (36 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/1FQCpdyosMqGcYT29')" title="Domande ordinate, risposte casuali">Parte 2 (35 domande)</li>
+			<li class="section-item test-completo" onclick="loadForm('https://forms.gle/r8UajkQusXBLZPAv9')" title="Domande casuali, risposte casuali">Test completo (71 domande)</li>			
+        </ul>
+        <div class="sub-area-title">FI - REGOLAZIONE INTERNA (Endocrino, Urinario)</div>
+        <ul class="section-list">
+            <li class="section-item" onclick="loadForm('https://forms.gle/HzPgYydiaur9F9Kx7')" title="Domande ordinate, risposte casuali">Parte 1 (20 domande)</li>
+			<li class="section-item test-completo" onclick="loadForm('https://forms.gle/fAYoUBeCBdGqrJ1RA')" title="Domande casuali, risposte casuali">Test completo (20 domande)</li>			
+        </ul>
+        <div class="sub-area-title">FI - RESIDUO (Altro)</div>
+        <ul class="section-list">
+            <li class="section-item" onclick="loadForm('https://forms.gle/z71HFQsTCeH3pE5Q7')" title="Domande ordinate, risposte casuali">Parte 1 (28 domande)</li>
+			<li class="section-item test-completo" onclick="loadForm('https://forms.gle/qvWg6q5FmHvSzWQk7')" title="Domande casuali, risposte casuali">Test completo (28 domande)</li>			
+        </ul>		
+		
+		
+        <div class="sub-area-title">FI - SISTEMI DI TRASPORTO (Cardio, Circolatorio, Polmoni, Respiratorio)</div>
+        <ul class="section-list">
+            <li class="section-item" onclick="loadForm('https://forms.gle/Ar9LdTEGxKX2pM33A')" title="Domande ordinate, risposte casuali">Parte 1 (35 domande)</li>
+            <li class="section-item" onclick="loadForm('https://forms.gle/yMXXreA26dJJNt8V8')" title="Domande ordinate, risposte casuali">Parte 2 (33 domande)</li>
+            <li class="section-item test-completo" onclick="loadForm('https://forms.gle/h2RwWvKDuTd6j3oS6')" title="Domande casuali, risposte casuali">Test completo (68 domande)</li>
         </ul>
     </div>
 
